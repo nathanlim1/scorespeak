@@ -42,6 +42,18 @@ LONG_CASE_IDS = [
     "lt_20260602_235150_mozart_k155_m1_bars001_040",
     "lt_20260602_235150_beethoven_op67_m1_full_bars001_020",
 ]
+SOURCE_COLUMNS = [
+    "file_path",
+    "dataset",
+    "work",
+    "composer",
+    "source_project",
+    "source_reference",
+    "transcriber_or_editor",
+    "rights_or_license",
+    "license_reference",
+    "notes",
+]
 
 
 def _read_precise_rows() -> list[dict[str, str]]:
@@ -59,6 +71,17 @@ def _load_long_task_manifest() -> dict[str, Any]:
     """Load the long-task reconstruction manifest."""
     manifest_path = REPO_ROOT / "datasets/long_task_reconstruction/manifest.json"
     return json.loads(manifest_path.read_text(encoding="utf-8"))
+
+
+def _read_source_rows() -> list[dict[str, str]]:
+    """Load public dataset source attribution rows."""
+    with (REPO_ROOT / "datasets/sources.csv").open(
+        encoding="utf-8",
+        newline="",
+    ) as handle:
+        reader = csv.DictReader(handle)
+        assert reader.fieldnames == SOURCE_COLUMNS
+        return list(reader)
 
 
 def test_precise_edit_csv_is_public_shape() -> None:
@@ -329,3 +352,50 @@ def test_long_task_fact_extraction_reads_included_target() -> None:
     assert result.target_fact_count_supported > 200
     assert "event" in channels
     assert "part" in channels
+
+
+def test_dataset_sources_cover_included_musicxml_files() -> None:
+    """Every included MusicXML dataset file should have provenance metadata."""
+    rows = _read_source_rows()
+    rows_by_path = {row["file_path"]: row for row in rows}
+    musicxml_paths = {
+        str(path.relative_to(REPO_ROOT))
+        for path in (REPO_ROOT / "datasets").rglob("*.musicxml")
+    }
+
+    assert set(rows_by_path) == musicxml_paths
+    assert (REPO_ROOT / "datasets/ATTRIBUTIONS.md").is_file()
+
+    for row in rows:
+        assert (REPO_ROOT / row["file_path"]).is_file()
+        assert row["dataset"] in {"precise_edit", "long_task_reconstruction"}
+        assert row["work"]
+        assert row["composer"]
+        assert row["source_project"]
+        assert row["source_reference"]
+        assert row["rights_or_license"]
+        assert row["license_reference"]
+
+
+def test_long_task_music21_corpus_attributions_are_explicit() -> None:
+    """Non-Beethoven-5 long-task corpus files should cite music21 sources."""
+    rows = _read_source_rows()
+    long_task_rows = [
+        row
+        for row in rows
+        if row["dataset"] == "long_task_reconstruction"
+        and "beethoven_op67" not in row["file_path"]
+    ]
+    expected_references = {
+        "music21/corpus/beethoven/opus59no1/movement4.mxl",
+        "music21/corpus/haydn/opus74no1/movement2.mxl",
+        "music21/corpus/mozart/k155/movement1.mxl",
+        "music21/corpus/mozart/k156/movement1.mxl",
+        "music21/corpus/mozart/k545/movement1_exposition.mxl",
+    }
+
+    assert len(long_task_rows) == 10
+    assert {row["source_reference"] for row in long_task_rows} == expected_references
+    for row in long_task_rows:
+        assert row["source_project"] == "music21 corpus"
+        assert row["license_reference"] == "music21/corpus/license.txt"

@@ -48,6 +48,9 @@ MusicXML export.
 
 ## Public Datasets
 
+Dataset source and rights notes are documented in `datasets/ATTRIBUTIONS.md`,
+with file-level provenance in `datasets/sources.csv`.
+
 `datasets/precise_edit/cases.csv` contains the final 752 validated precise-edit
 benchmark cases. It has only public fields:
 
