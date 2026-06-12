@@ -2,6 +2,10 @@
 
 ScoreSpeak is a comprehensive LLM-based agentic system that enables full natural language control of musical scores as MusicXML files. With over 80 score editing tools available to the agent, ScoreSpeak supports both the creation and precise editing of virtually every aspect of a score, including notation, instrumentation, articulations, dynamics, expressions, and advanced structural layouts.
 
+## Demo
+
+![ScoreSpeak web demo](assets/scorespeak-demo.gif)
+
 This public repository contains:
 
 - `scorespeak/`: the score editing framework, retrieval helpers, agent tools,
