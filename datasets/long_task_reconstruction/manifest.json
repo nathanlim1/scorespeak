@@ -1,0 +1,78 @@
+{
+  "name": "ScoreSpeak long-task reconstruction benchmark",
+  "case_count": 6,
+  "cases": [
+    {
+      "case_id": "lt_20260602_235150_mozart_k156_bars001_040",
+      "title": "Mozart K.156 mvt. 1, bars 1-40",
+      "source_musicxml_path": "sources/mozart_k156_m1_bars001-100.musicxml",
+      "target_musicxml_path": "targets/mozart_k156_bars001_040.musicxml",
+      "prompt_path": "prompts/lt_20260602_235150_mozart_k156_bars001_040.txt",
+      "tags": [
+        "long_task",
+        "chunk_size_8"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "lt_20260602_235150_mozart_k545_bars001_012",
+      "title": "Mozart K.545, bars 1-12",
+      "source_musicxml_path": "sources/mozart_k545_m1_exposition_bars001-012.musicxml",
+      "target_musicxml_path": "targets/mozart_k545_bars001_012.musicxml",
+      "prompt_path": "prompts/lt_20260602_235150_mozart_k545_bars001_012.txt",
+      "tags": [
+        "long_task",
+        "chunk_size_8"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "lt_20260602_235150_beethoven_op59no1_m4_bars001_040",
+      "title": "Beethoven Op.59 No.1 mvt. 4, bars 1-40",
+      "source_musicxml_path": "sources/beethoven_op59no1_m4_bars001-100.musicxml",
+      "target_musicxml_path": "targets/beethoven_op59no1_m4_bars001_040.musicxml",
+      "prompt_path": "prompts/lt_20260602_235150_beethoven_op59no1_m4_bars001_040.txt",
+      "tags": [
+        "long_task",
+        "chunk_size_8"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "lt_20260602_235150_haydn_op74no1_m2_bars001_040",
+      "title": "Haydn Op.74 No.1 mvt. 2, bars 1-40",
+      "source_musicxml_path": "sources/haydn_op74no1_m2_bars001-100.musicxml",
+      "target_musicxml_path": "targets/haydn_op74no1_m2_bars001_040.musicxml",
+      "prompt_path": "prompts/lt_20260602_235150_haydn_op74no1_m2_bars001_040.txt",
+      "tags": [
+        "long_task",
+        "chunk_size_8"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "lt_20260602_235150_mozart_k155_m1_bars001_040",
+      "title": "Mozart K.155 mvt. 1, bars 1-40",
+      "source_musicxml_path": "sources/mozart_k155_m1_bars001-100.musicxml",
+      "target_musicxml_path": "targets/mozart_k155_m1_bars001_040.musicxml",
+      "prompt_path": "prompts/lt_20260602_235150_mozart_k155_m1_bars001_040.txt",
+      "tags": [
+        "long_task",
+        "chunk_size_8"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "case_id": "lt_20260602_235150_beethoven_op67_m1_full_bars001_020",
+      "title": "Beethoven Op.67 mvt. 1 full, bars 1-20",
+      "source_musicxml_path": "sources/beethoven_op67_m1_full_bars001-100.musicxml",
+      "target_musicxml_path": "targets/beethoven_op67_m1_full_bars001_020.musicxml",
+      "prompt_path": "prompts/lt_20260602_235150_beethoven_op67_m1_full_bars001_020.txt",
+      "tags": [
+        "long_task",
+        "chunk_size_8"
+      ],
+      "difficulty": "hard"
+    }
+  ]
+}

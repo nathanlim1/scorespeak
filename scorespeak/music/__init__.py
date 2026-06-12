@@ -1,0 +1,1 @@
+"""Internal ScoreSpeak music helpers."""

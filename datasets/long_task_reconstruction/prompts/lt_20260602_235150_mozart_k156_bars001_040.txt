@@ -1,0 +1,122 @@
+Setup:
+Create exactly four parts in this order: part 0 with displayed name Violin 1, part 1 with displayed name Violin 2, part 2 with displayed name Viola, and part 3 with displayed name Violoncello. Do not create any additional parts later. In measure 1, set the key signature to G major and the time signature to 3/8. In measure 1, set Violin 1 to treble clef, Violin 2 to treble clef, Viola to alto clef, and Violoncello to bass clef.
+
+Measure 1:
+Create measure 1 in every part. In Violin 1, place a dotted quarter D5 at beat 1, with the text expression "Presto" at beat 1 and dynamic f at beat 1. In Violin 2, place an eighth rest at beat 1, an eighth B4 at beat 1.5, and an eighth B4 at beat 2, with dynamic f at beat 1.5. In Viola, place an eighth rest at beat 1, an eighth G4 at beat 1.5, and an eighth G4 at beat 2, with dynamic f at beat 1.5. In Violoncello, place a quarter G3 at beat 1 and an eighth rest at beat 2, with dynamic f at beat 1.
+
+Measure 2:
+Create measure 2 in every part. In Violin 1, place an eighth D5 at beat 1, an eighth B5 at beat 1.5, and an eighth G5 at beat 2. Tie the dotted quarter D5 at measure 1 beat 1 to the eighth D5 at measure 2 beat 1. Add a slur from measure 2 beat 1 to measure 2 beat 2. In Violin 2, place an eighth rest at beat 1, an eighth D5 at beat 1.5, and an eighth B4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth G4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place a quarter G2 at beat 1 and an eighth rest at beat 2.
+
+Measure 3:
+Create measure 3 in every part. In Violin 1, place a dotted quarter G5 at beat 1 with a trill ornament at beat 1. In Violin 2, place an eighth rest at beat 1, an eighth C5 at beat 1.5, and an eighth C5 at beat 2. In Viola, place an eighth rest at beat 1, an eighth D4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place a quarter A2 at beat 1 and an eighth rest at beat 2.
+
+Measure 4:
+Create measure 4 in every part. In Violin 1, place a quarter F#5 at beat 1 and an eighth rest at beat 2. In Violin 2, place an eighth rest at beat 1, an eighth C5 at beat 1.5, and an eighth C5 at beat 2. In Viola, place an eighth rest at beat 1, an eighth D4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place a quarter A3 at beat 1 and an eighth rest at beat 2.
+
+Measure 5:
+Create measure 5 in every part. In Violin 1, place a dotted quarter A5 at beat 1. In Violin 2, place an eighth rest at beat 1, an eighth A4 at beat 1.5, and an eighth A4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth F#4 at beat 1.5, and an eighth F#4 at beat 2. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2.
+
+Measure 6:
+Create measure 6 in every part. In Violin 1, place an eighth A5 at beat 1, an eighth A4 at beat 1.5, and an eighth C5 at beat 2. Tie the dotted quarter A5 at measure 5 beat 1 to the eighth A5 at measure 6 beat 1. In Violin 2, place an eighth rest at beat 1, an eighth F#4 at beat 1.5, and an eighth A4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth D4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place a quarter D2 at beat 1 and an eighth rest at beat 2.
+
+Measure 7:
+Create measure 7 in every part. In Violin 1, place a dotted quarter C5 at beat 1 with a trill ornament at beat 1. In Violin 2, place an eighth rest at beat 1, an eighth A4 at beat 1.5, and an eighth A4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth F#4 at beat 1.5, and an eighth F#4 at beat 2. In Violoncello, place a quarter G2 at beat 1 and an eighth rest at beat 2.
+
+Measure 8:
+Create measure 8 in every part. In Violin 1, place a quarter B4 at beat 1 and an eighth rest at beat 2. In Violin 2, place an eighth rest at beat 1, an eighth G4 at beat 1.5, and an eighth G4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth G4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place a quarter G3 at beat 1 and an eighth rest at beat 2.
+
+Measure 9:
+Create measure 9 in every part. In Violin 1, place a slashed 16th grace C#5 at beat 1 leading into a dotted quarter D5 at beat 1. In Violin 2, place an eighth rest at beat 1, an eighth G4 at beat 1.5, and an eighth G4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth D4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place a quarter B3 at beat 1 and an eighth rest at beat 2.
+
+Measure 10:
+Create measure 10 in every part. In Violin 1, place a slashed 16th grace C#5 at beat 1 leading into a dotted quarter D5 at beat 1. In Violin 2, place an eighth C5 at beat 1, an eighth C5 at beat 1.5, and an eighth rest at beat 2. In Viola, place an eighth rest at beat 1, an eighth F#4 at beat 1.5, and an eighth F#4 at beat 2. In Violoncello, place a quarter A3 at beat 1 and an eighth rest at beat 2.
+
+Measure 11:
+Create measure 11 in every part. In Violin 1, place a sixteenth G5 at beat 1, a sixteenth A5 at beat 1.25, a sixteenth B5 at beat 1.5, a sixteenth G5 at beat 1.75, a sixteenth F#5 at beat 2, and a sixteenth E5 at beat 2.25. Add staccato at beat 1.75, staccato at beat 2, and staccato at beat 2.25. Add a slur from measure 11 beat 1 to measure 11 beat 1.5. In Violin 2, place a quarter B4 at beat 1 and an eighth rest at beat 2. In Viola, place a quarter G4 at beat 1 and an eighth rest at beat 2. In Violoncello, place a quarter G3 at beat 1 and an eighth rest at beat 2.
+
+Measure 12:
+Create measure 12 in every part. In Violin 1, place a sixteenth D5 at beat 1, a sixteenth E5 at beat 1.25, a sixteenth D5 at beat 1.5, a sixteenth C5 at beat 1.75, a sixteenth B4 at beat 2, and a sixteenth A4 at beat 2.25. All other parts should remain empty (with rests) in this measure.
+
+Measure 13:
+Create measure 13 in every part. In Violin 1, place a sixteenth G4 at beat 1, a sixteenth A4 at beat 1.25, a sixteenth B4 at beat 1.5, a sixteenth G4 at beat 1.75, a sixteenth F#4 at beat 2, and a sixteenth E4 at beat 2.25. In Violoncello, place a quarter G2 at beat 1 and an eighth rest at beat 2. All other parts should remain empty (with rests) in this measure.
+
+Measure 14:
+Create measure 14 in every part. In Violin 1, place a sixteenth D4 at beat 1, a sixteenth E4 at beat 1.25, a sixteenth D4 at beat 1.5, a sixteenth C4 at beat 1.75, a sixteenth B3 at beat 2, and a sixteenth A3 at beat 2.25. All other parts should remain empty (with rests) in this measure.
+
+Measure 15:
+Create measure 15 in every part. In Violin 1, place an eighth G3 at beat 1, a sixteenth G4 at beat 1.5, a sixteenth F#4 at beat 1.75, a sixteenth G4 at beat 2, and a sixteenth A4 at beat 2.25. In Violin 2, place an eighth G3 at beat 1, a sixteenth G4 at beat 1.5, a sixteenth F#4 at beat 1.75, a sixteenth G4 at beat 2, and a sixteenth A4 at beat 2.25. In Viola, place a dotted quarter G3 at beat 1. In Violoncello, place a dotted quarter G3 at beat 1.
+
+Measure 16:
+Create measure 16 in every part. In Violin 1, place an eighth B4 at beat 1, a sixteenth B4 at beat 1.5, a sixteenth A4 at beat 1.75, a sixteenth B4 at beat 2, and a sixteenth C5 at beat 2.25. In Violin 2, place an eighth B4 at beat 1, a sixteenth B4 at beat 1.5, a sixteenth A4 at beat 1.75, a sixteenth B4 at beat 2, and a sixteenth C5 at beat 2.25. In Viola, place a dotted quarter B3 at beat 1. In Violoncello, place a dotted quarter B3 at beat 1.
+
+Measure 17:
+Create measure 17 in every part. In Violin 1, place an eighth D5 at beat 1, an eighth D5 at beat 1.5, and an eighth D5 at beat 2. In Violin 2, place an eighth D5 at beat 1, an eighth chord (F#4, A4) at beat 1.5, and an eighth chord (F#4, A4) at beat 2. In Viola, place an eighth D4 at beat 1, an eighth F#4 at beat 1.5, and an eighth A4 at beat 2. In Violoncello, place an eighth D4 at beat 1, an eighth A3 at beat 1.5, and an eighth F#3 at beat 2.
+
+Measure 18:
+Create measure 18 in every part. In Violin 1, place a quarter D5 at beat 1 and an eighth rest at beat 2. In Violin 2, place a quarter chord (F#4, A4) at beat 1 and an eighth rest at beat 2. In Viola, place a quarter F#4 at beat 1 and an eighth rest at beat 2. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2.
+
+Measure 19:
+Create measure 19 in every part. In Violin 1, place an eighth F#5 at beat 1, an eighth G5 at beat 1.5, and an eighth A5 at beat 2, with dynamic p at beat 1. Add a slur from measure 19 beat 1 to measure 19 beat 2. In Violin 2, place an eighth D4 at beat 1, an eighth E4 at beat 1.5, and an eighth F#4 at beat 2. Add a slur from measure 19 beat 1 to measure 19 beat 2. In Viola, place a dotted quarter rest at beat 1 with dynamic p at beat 1. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2, with dynamic p at beat 1.
+
+Measure 20:
+Create measure 20 in every part. In Violin 1, place a dotted quarter B5 at beat 1. In Violin 2, place an eighth F#4 at beat 1, an eighth E4 at beat 1.5, and an eighth D4 at beat 2. Add a slur from measure 20 beat 1 to measure 20 beat 2. In Viola, place an eighth rest at beat 1, an eighth A4 at beat 1.5, and an eighth A4 at beat 2. Add staccato and dynamic p at beat 1.5, and staccato at beat 2. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2.
+
+Measure 21:
+Create measure 21 in every part. In Violin 1, place an eighth C#5 at beat 1, an eighth D5 at beat 1.5, and an eighth E5 at beat 2. Add a slur from measure 21 beat 1 to measure 21 beat 2. In Violin 2, place an eighth E4 at beat 1, an eighth F#4 at beat 1.5, and an eighth G4 at beat 2. Add a slur from measure 21 beat 1 to measure 21 beat 2. In Viola, place a quarter A4 at beat 1 and an eighth rest at beat 2, with staccato at beat 1. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2.
+
+Measure 22:
+Create measure 22 in every part. In Violin 1, place a dotted quarter E5 at beat 1. In Violin 2, place an eighth G4 at beat 1, an eighth F#4 at beat 1.5, and an eighth E4 at beat 2. Add a slur from measure 22 beat 1 to measure 22 beat 2. In Viola, place an eighth rest at beat 1, an eighth A4 at beat 1.5, and an eighth A4 at beat 2, with staccato at beat 1.5 and staccato at beat 2. In Violoncello, place a quarter A3 at beat 1 and an eighth rest at beat 2.
+
+Measure 23:
+Create measure 23 in every part. In Violin 1, place an eighth D5 at beat 1, an eighth E5 at beat 1.5, and an eighth F#5 at beat 2. Add a slur from measure 23 beat 1 to measure 23 beat 2. In Violin 2, place an eighth F#4 at beat 1, an eighth G4 at beat 1.5, and an eighth A4 at beat 2. Add a slur from measure 23 beat 1 to measure 23 beat 2. In Viola, place a quarter A4 at beat 1 and an eighth rest at beat 2, with staccato at beat 1. In Violoncello, place a quarter A3 at beat 1 and an eighth rest at beat 2.
+
+Measure 24:
+Create measure 24 in every part. In Violin 1, place a dotted quarter F#5 at beat 1. In Violin 2, place an eighth A4 at beat 1, an eighth F#4 at beat 1.5, and an eighth D4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth A4 at beat 1.5, and an eighth A4 at beat 2, with staccato at beat 1.5 and staccato at beat 2. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2.
+
+Measure 25:
+Create measure 25 in every part. In Violin 1, place an eighth G5 at beat 1, an eighth F#5 at beat 1.5, and an eighth E5 at beat 2. Add a slur from measure 25 beat 1 to measure 25 beat 2. In Violin 2, place an eighth E4 at beat 1, an eighth D4 at beat 1.5, and an eighth C#4 at beat 2. In Viola, place a quarter A4 at beat 1 and an eighth rest at beat 2. In Violoncello, place a quarter D3 at beat 1 and an eighth rest at beat 2.
+
+Measure 26:
+Create measure 26 in every part. In Violin 1, place a dotted quarter E5 at beat 1. In Violin 2, place an eighth C#4 at beat 1, an eighth E4 at beat 1.5, and an eighth A4 at beat 2. In Viola, place an eighth rest at beat 1, an eighth A4 at beat 1.5, and an eighth A4 at beat 2. In Violoncello, place a quarter A2 at beat 1 and an eighth rest at beat 2.
+
+Measure 27:
+Create measure 27 in every part. In Violin 1, place a sixteenth F#5 at beat 1, a sixteenth G5 at beat 1.25, a sixteenth F#5 at beat 1.5, a sixteenth G5 at beat 1.75, and an eighth A5 at beat 2. Add a slur from measure 27 beat 1 to measure 27 beat 2. In Violoncello, place a quarter A2 at beat 1 and an eighth rest at beat 2. All other parts should remain empty (with rests) in this measure.
+
+Measure 28:
+Create measure 28 in every part. All parts: add staccato at beat 1, staccato at beat 1.5, and staccato at beat 2. In Violin 1, place an eighth A5 at beat 1, an eighth A5 at beat 1.5, and an eighth A5 at beat 2. In Violin 2, place an eighth A4 at beat 1, an eighth G4 at beat 1.5, and an eighth F#4 at beat 2. In Viola, place an eighth A3 at beat 1, an eighth C#4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place an eighth F#3 at beat 1, an eighth E3 at beat 1.5, and an eighth D3 at beat 2.
+
+Measure 29:
+Create measure 29 in every part. In Violin 1, place a sixteenth C#5 at beat 1, a sixteenth D5 at beat 1.25, a sixteenth C#5 at beat 1.5, a sixteenth D5 at beat 1.75, and an eighth E5 at beat 2. Add a slur from measure 29 beat 1 to measure 29 beat 2. All other parts should remain empty (with rests) in this measure.
+
+Measure 30:
+Create measure 30 in every part. All parts: add staccato at beat 1, staccato at beat 1.5, and staccato at beat 2. In Violin 1, place an eighth E5 at beat 1, an eighth E5 at beat 1.5, and an eighth E5 at beat 2. In Violin 2, place an eighth G4 at beat 1, an eighth G4 at beat 1.5, and an eighth G4 at beat 2. In Viola, place an eighth C#4 at beat 1, an eighth B3 at beat 1.5, and an eighth A3 at beat 2. In Violoncello, place an eighth E3 at beat 1, an eighth D3 at beat 1.5, and an eighth C#3 at beat 2.
+
+Measure 31:
+Create measure 31 in every part. In Violin 1, place a sixteenth D5 at beat 1, a sixteenth E5 at beat 1.25, a sixteenth D5 at beat 1.5, a sixteenth E5 at beat 1.75, and an eighth F#5 at beat 2. Add a slur from measure 31 beat 1 to measure 31 beat 2. All other parts should remain empty (with rests) in this measure.
+
+Measure 32:
+Create measure 32 in every part. All parts: add staccato at beat 1, staccato at beat 1.5, and staccato at beat 2. In Violin 1, place an eighth F#5 at beat 1, an eighth F#5 at beat 1.5, and an eighth F#5 at beat 2. In Violin 2, place an eighth F#4 at beat 1, an eighth D4 at beat 1.5, and an eighth D4 at beat 2. In Viola, place an eighth A3 at beat 1, an eighth A3 at beat 1.5, and an eighth A3 at beat 2. In Violoncello, place an eighth D3 at beat 1, an eighth D3 at beat 1.5, and an eighth D3 at beat 2.
+
+Measure 33:
+Create measure 33 in every part. In Violin 1, place a sixteenth G5 at beat 1, a sixteenth F#5 at beat 1.25, a sixteenth G5 at beat 1.5, a sixteenth F#5 at beat 1.75, and an eighth E5 at beat 2. Add a slur from measure 33 beat 1 to measure 33 beat 2. All other parts should remain empty (with rests) in this measure.
+
+Measure 34:
+Create measure 34 in every part. All parts: add staccato at beat 1, staccato at beat 1.5, and staccato at beat 2. In Violin 1, place an eighth E5 at beat 1, an eighth E5 at beat 1.5, and an eighth E5 at beat 2. In Violin 2, place an eighth C#4 at beat 1, an eighth D4 at beat 1.5, and an eighth E4 at beat 2. In Viola, place an eighth A3 at beat 1, an eighth A3 at beat 1.5, and an eighth G3 at beat 2. In Violoncello, place an eighth A2 at beat 1, an eighth B2 at beat 1.5, and an eighth C#3 at beat 2.
+
+Measure 35:
+Create measure 35 in every part. All parts: add dynamic f at beat 1. In Violin 1, place a dotted quarter D5 at beat 1. In Violin 2, place a dotted quarter A3 at beat 1. In Viola, place a dotted quarter F#3 at beat 1. In Violoncello, place an eighth D3 at beat 1, an eighth D3 at beat 1.5, and an eighth D3 at beat 2.
+
+Measure 36:
+Create measure 36 in every part. In Violin 1, place an eighth D5 at beat 1, an eighth D6 at beat 1.5, and an eighth C6 at beat 2. Tie the dotted quarter D5 at measure 35 beat 1 to the eighth D5 at measure 36 beat 1. Add a slur from measure 36 beat 1 to measure 36 beat 2. In Violin 2, place a dotted quarter A4 at beat 1. In Viola, place a dotted quarter F#4 at beat 1. In Violoncello, place an eighth D3 at beat 1, an eighth D3 at beat 1.5, and an eighth D3 at beat 2.
+
+Measure 37:
+Create measure 37 in every part. In Violin 1, place a dotted quarter A#5 at beat 1. In Violin 2, place a dotted quarter D4 at beat 1. In Viola, place a dotted quarter F#4 at beat 1, and tie the dotted quarter F#4 at measure 36 beat 1 to the dotted quarter F#4 at measure 37 beat 1. In Violoncello, place an eighth G3 at beat 1, an eighth G3 at beat 1.5, and an eighth G3 at beat 2.
+
+Measure 38:
+Create measure 38 in every part. In Violin 1, place an eighth B5 at beat 1, an eighth rest at beat 1.5, and an eighth rest at beat 2. In Violin 2, place an eighth C4 at beat 1, an eighth G4 at beat 1.5, and an eighth F#4 at beat 2. Add a slur from measure 38 beat 1 to measure 38 beat 2. In Viola, place an eighth G4 at beat 1, an eighth E4 at beat 1.5, and an eighth D4 at beat 2. In Violoncello, place an eighth G3 at beat 1, an eighth G3 at beat 1.5, and an eighth G3 at beat 2.
+
+Measure 39:
+Create measure 39 in every part. In Violin 1, place a dotted quarter A4 at beat 1. In Violin 2, place a dotted quarter E4 at beat 1. In Viola, place a dotted quarter C#4 at beat 1. In Violoncello, place an eighth A3 at beat 1, an eighth A3 at beat 1.5, and an eighth A3 at beat 2.
+
+Measure 40:
+Create measure 40 in every part. In Violin 1, place an eighth A4 at beat 1, an eighth A5 at beat 1.5, and an eighth G5 at beat 2. Tie the dotted quarter A4 at measure 39 beat 1 to the eighth A4 at measure 40 beat 1. Add a slur from measure 40 beat 1 to measure 40 beat 2. In Violin 2, place a dotted quarter C#5 at beat 1. In Viola, place a dotted quarter E4 at beat 1. In Violoncello, place an eighth A2 at beat 1, an eighth A2 at beat 1.5, and an eighth A2 at beat 2.

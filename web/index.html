@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreSpeak AI Music Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <main class="main-container">
+            <section class="container" aria-label="Music score workspace">
+                <header class="app-header">
+                    <div class="header-copy">
+                        <span class="eyebrow">California Polytechnic State University, San Luis Obispo</span>
+                        <h1>ScoreSpeak</h1>
+                        <h3>An Agentic System for Natural Language Control of Musical Scores</h3>
+                        <p>Create new scores or edit existing ones you upload using natural language.</p>
+                    </div>
+                </header>
+
+                <section class="controls" aria-label="Score controls">
+                    <div class="control-group upload-section">
+                        <label for="file-input" class="upload-btn">
+                            <span>Upload MusicXML</span>
+                            <input type="file" id="file-input" accept=".musicxml,.xml,.mxl" />
+                        </label>
+                        <span id="file-name" class="file-name">No score selected</span>
+                    </div>
+
+                    <div class="control-group sample-section" aria-label="Score actions">
+                        <button id="load-sample" class="btn btn-secondary">
+                            Load sample
+                        </button>
+                        <button id="new-score" class="btn btn-secondary">
+                            New score
+                        </button>
+                        <button id="download-musicxml" class="btn btn-secondary" type="button">
+                            Download MusicXML
+                        </button>
+                    </div>
+
+                    <div class="control-group zoom-controls" aria-label="Zoom controls">
+                        <button id="zoom-out" class="btn btn-icon" title="Zoom Out" aria-label="Zoom out">-</button>
+                        <button id="zoom-reset" class="btn btn-icon btn-reset" title="Reset Zoom" aria-label="Reset zoom">Reset</button>
+                        <button id="zoom-in" class="btn btn-icon" title="Zoom In" aria-label="Zoom in">+</button>
+                    </div>
+
+                    <div class="control-group range-controls" id="range-controls" hidden aria-label="Score range controls">
+                        <button id="range-prev" class="btn btn-secondary" type="button">Previous</button>
+                        <span id="range-label" class="range-label">Measures 1-1</span>
+                        <button id="range-next" class="btn btn-secondary" type="button">Next</button>
+                    </div>
+                </section>
+
+                <div id="error-message" class="error-message"></div>
+                <div id="sheet-music-container" aria-live="polite">
+                    <div id="loading" class="loading" role="status" aria-hidden="true">
+                        <span class="loading-spinner" aria-hidden="true"></span>
+                        <span class="loading-copy">
+                            <span id="loading-title" class="loading-title">Rendering sheet music</span>
+                            <span id="loading-detail" class="loading-detail">Preparing notation...</span>
+                        </span>
+                    </div>
+                    <div id="osmd-container"></div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="chat-sidebar" id="chat-sidebar" aria-label="ScoreSpeak Agent">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <span class="assistant-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+                            <path d="M20 3v4"></path>
+                            <path d="M22 5h-4"></path>
+                            <path d="M4 17v2"></path>
+                            <path d="M5 18H3"></path>
+                        </svg>
+                    </span>
+                    <div>
+                        <h2>ScoreSpeak Agent</h2>
+                        <p id="agent-settings-summary" class="agent-settings-summary">
+                            GPT-5.4 Mini · Low reasoning
+                        </p>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <button id="open-agent-settings" class="btn-icon-only" type="button" title="Settings" aria-label="Open agent settings">
+                        <svg viewBox="-1 -1 26 26" aria-hidden="true" focusable="false">
+                            <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z"></path>
+                            <path d="M19.4 15a1.8 1.8 0 0 0 .36 1.98l.04.04a2.1 2.1 0 0 1-2.98 2.98l-.04-.04a1.8 1.8 0 0 0-1.98-.36 1.8 1.8 0 0 0-1.1 1.66V21a2.1 2.1 0 0 1-4.2 0v-.06a1.8 1.8 0 0 0-1.1-1.66 1.8 1.8 0 0 0-1.98.36l-.04.04a2.1 2.1 0 0 1-2.98-2.98l.04-.04A1.8 1.8 0 0 0 4.6 15a1.8 1.8 0 0 0-1.66-1.1H3a2.1 2.1 0 0 1 0-4.2h.06A1.8 1.8 0 0 0 4.72 8.6a1.8 1.8 0 0 0-.36-1.98l-.04-.04A2.1 2.1 0 0 1 7.3 3.6l.04.04A1.8 1.8 0 0 0 9.32 4a1.8 1.8 0 0 0 1.1-1.66V2.3a2.1 2.1 0 0 1 4.2 0v.06A1.8 1.8 0 0 0 15.72 4a1.8 1.8 0 0 0 1.98-.36l.04-.04a2.1 2.1 0 0 1 2.98 2.98l-.04.04a1.8 1.8 0 0 0-.36 1.98 1.8 1.8 0 0 0 1.66 1.1H22a2.1 2.1 0 0 1 0 4.2h-.06A1.8 1.8 0 0 0 19.4 15Z"></path>
+                        </svg>
+                    </button>
+                    <button id="toggle-chat" class="btn-close" type="button" title="Toggle Chat" aria-label="Toggle Chat">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <dialog id="agent-settings-dialog" class="settings-dialog" aria-labelledby="agent-settings-title">
+                <form id="agent-settings-form" class="settings-form" method="dialog">
+                    <div class="settings-header">
+                        <h3 id="agent-settings-title">Agent Settings</h3>
+                        <button id="close-agent-settings" class="btn-icon-only" type="button" title="Close settings" aria-label="Close settings">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <label class="settings-field" for="agent-model-select">
+                        <span>Model</span>
+                        <select id="agent-model-select" class="agent-model-select" aria-label="Agent model">
+                            <option value="gpt-5.4-mini">GPT-5.4 Mini</option>
+                        </select>
+                    </label>
+
+                    <label class="settings-field" for="agent-reasoning-select">
+                        <span>Reasoning</span>
+                        <select id="agent-reasoning-select" class="agent-reasoning-select" aria-label="Reasoning effort">
+                            <option value="low">Low</option>
+                        </select>
+                    </label>
+
+                    <label class="settings-toggle">
+                        <span>Prompt split mode</span>
+                        <input id="prompt-split-enabled" type="checkbox" role="switch" />
+                    </label>
+
+                    <label class="settings-field" for="prompt-split-min-sentences">
+                        <span>Minimum sentences to split</span>
+                        <input
+                            id="prompt-split-min-sentences"
+                            class="settings-number-input"
+                            type="number"
+                            min="1"
+                            step="1"
+                            inputmode="numeric"
+                        />
+                    </label>
+
+                    <div class="settings-actions">
+                        <button id="cancel-agent-settings" class="btn btn-secondary" type="button">Cancel</button>
+                        <button id="save-agent-settings" class="btn" type="submit">Save</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="system-message">
+                    <p class="system-message-title">Ready to work on your score.</p>
+                    <p>Ask for notation edits in natural language.</p>
+                </div>
+            </div>
+
+            <form id="chat-form" class="chat-input-container">
+                <input
+                    type="text"
+                    id="chat-input"
+                    class="chat-input"
+                    placeholder="Message the music editor..."
+                    autocomplete="off"
+                    aria-label="Message the music editor"
+                />
+                <button type="button" id="voice-btn" class="btn-voice" title="Record voice input" aria-label="Record voice input" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"></path>
+                        <path d="M19 11a7 7 0 0 1-14 0"></path>
+                        <path d="M12 18v3"></path>
+                        <path d="M8 21h8"></path>
+                    </svg>
+                </button>
+                <button type="submit" id="send-btn" class="btn-send" title="Send" aria-label="Send">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M12 19V5"></path>
+                        <path d="m5 12 7-7 7 7"></path>
+                    </svg>
+                </button>
+            </form>
+        </aside>
+    </div>
+
+    <button id="toggle-chat-fab" class="chat-fab" title="Toggle Chat">
+        Chat
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.7/build/opensheetmusicdisplay.min.js"></script>
+    <script src="/vendor/osmd_musicxml_fixes.js?v=osmd-fixes-5"></script>
+    <script src="app.js?v=post-render-fallback-1"></script>
+</body>
+</html>

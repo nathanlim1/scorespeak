@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scorespeak"
+version = "0.1.0"
+description = "Natural-language MusicXML score editing framework, agent, and web editor"
+requires-python = ">=3.10"
+dependencies = [
+    "music21>=9.1",
+    "lxml>=5.0",
+    "pydantic>=2.0",
+    "langchain>=1.1",
+    "langchain-core>=1.1",
+    "langgraph>=1.0",
+    "langchain-openai>=1.1",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+    "Flask>=3.0",
+    "flask-cors>=4.0",
+    "typing-extensions>=4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "hypothesis>=6.0",
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["scorespeak*"]
