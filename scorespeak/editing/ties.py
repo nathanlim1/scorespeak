@@ -138,10 +138,10 @@ class TieEditingMixin:
     ) -> OperationResult:
         """Remove a connected tie chain from one note or chord.
 
-        A single call removes the start/continue/stop markers that form the
-        tie connected to the target note. If ``end_measure`` and ``end_beat``
-        are provided, removal is limited to the same-pitch chain between the
-        two endpoints.
+        Omitting ``end_measure`` and ``end_beat`` removes the full connected
+        tie chain containing the target note. Provide ``end_measure`` and
+        ``end_beat`` only to specify a distinct tied note or chord that bounds
+        the tie span.
 
         Args:
             start_measure: 1-based measure containing a tied note/chord.
@@ -150,8 +150,9 @@ class TieEditingMixin:
             voice: 1-based rhythmic timeline inside this part. Defaults to
                 voice 1. Use another voice only for a different simultaneous
                 rhythmic line, not for chord tones.
-            end_measure: Optional endpoint measure for a specific tie span.
-            end_beat: Optional endpoint beat for a specific tie span.
+            end_measure: Optional distinct endpoint measure for a specific
+                tie span.
+            end_beat: Optional distinct endpoint beat for a specific tie span.
 
         Returns:
             OperationResult confirming the tie-chain removal.
@@ -160,6 +161,31 @@ class TieEditingMixin:
             ValueError: If no note/chord is found, the element is a rest,
                 or the note/chord has no tie.
         """
+        endpoint_mode = end_measure is not None or end_beat is not None
+        if endpoint_mode:
+            if end_measure is None or end_beat is None:
+                raise ValueError(
+                    "Provide both end_measure and end_beat, or omit both."
+                )
+            normalized_start_measure = int(start_measure)
+            normalized_start_beat = float(start_beat)
+            normalized_end_measure = int(end_measure)
+            normalized_end_beat = float(end_beat)
+            if (
+                normalized_start_measure == normalized_end_measure
+                and abs(normalized_start_beat - normalized_end_beat)
+                <= _RHYTHM_EPSILON
+            ):
+                raise ValueError(
+                    "Invalid remove_tie endpoints: start and end both point "
+                    f"to measure {normalized_start_measure}, beat "
+                    f"{normalized_start_beat}, voice {voice}. A "
+                    "single-anchor remove_tie call removes the full connected "
+                    "tie chain containing the start note. If you provide "
+                    "end_measure/end_beat, they must identify the distinct "
+                    "note or chord this note is tied to."
+                )
+
         part_obj, part_idx = self._resolve_part(part)
         element = self._resolve_tie_endpoint(
             part_obj,
@@ -169,6 +195,14 @@ class TieEditingMixin:
             "target",
         )
         if getattr(element, "tie", None) is None:
+            if endpoint_mode:
+                raise ValueError(
+                    "Invalid remove_tie endpoint: measure "
+                    f"{int(start_measure)}, beat {float(start_beat)}, voice "
+                    f"{voice} is not a tied note or chord. If you provide "
+                    "end_measure/end_beat, they must identify the distinct "
+                    "note or chord that the start note is tied to."
+                )
             raise ValueError(
                 f"No tie found at beat {start_beat} in measure {start_measure}, voice "
                 f"{voice}. If the tied note is in another voice, inspect the "
@@ -184,11 +218,7 @@ class TieEditingMixin:
         )
         signature = self._tie_pitch_signature(element)
 
-        if end_measure is not None or end_beat is not None:
-            if end_measure is None or end_beat is None:
-                raise ValueError(
-                    "Provide both end_measure and end_beat, or omit both."
-                )
+        if endpoint_mode:
             end_element = self._resolve_tie_endpoint(
                 part_obj,
                 end_measure,
@@ -196,9 +226,13 @@ class TieEditingMixin:
                 voice,
                 "end",
             )
-            if self._tie_pitch_signature(end_element) != signature:
+            if getattr(end_element, "tie", None) is None:
                 raise ValueError(
-                    "Tie removal endpoints must have matching pitch content."
+                    "Invalid remove_tie endpoint: measure "
+                    f"{int(end_measure)}, beat {float(end_beat)}, voice "
+                    f"{voice} is not a tied note or chord. If you provide "
+                    "end_measure/end_beat, they must identify the distinct "
+                    "note or chord that the start note is tied to."
                 )
             end_index = self._tie_event_index(
                 events,
@@ -206,6 +240,20 @@ class TieEditingMixin:
                 end_beat,
                 end_element,
             )
+            chain_start_index, chain_stop_index = self._connected_tie_chain_indices(
+                events,
+                target_index,
+                signature,
+            )
+            if end_index < chain_start_index or end_index > chain_stop_index:
+                raise ValueError(
+                    "Invalid remove_tie endpoints: measure "
+                    f"{int(end_measure)}, beat {float(end_beat)}, voice "
+                    f"{voice} is not in the same tie chain as measure "
+                    f"{int(start_measure)}, beat {float(start_beat)}. If you "
+                    "provide end_measure/end_beat, choose a distinct note or "
+                    "chord in the same tie chain as the start note."
+                )
             start_index = min(target_index, end_index)
             stop_index = max(target_index, end_index)
         else:

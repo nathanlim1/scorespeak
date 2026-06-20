@@ -2220,6 +2220,116 @@ class TestRemoveTie:
             "stop",
         ]
 
+    def test_remove_tie_rejects_same_start_and_end_endpoint(self):
+        ss = _make_score()
+        ss._add_note_one("C4", "quarter", measure=1, beat=1)
+        ss._add_note_one("C4", "quarter", measure=1, beat=2)
+        ss.add_tie(measure=1, beat=1)
+
+        with pytest.raises(ValueError) as exc_info:
+            ss.remove_tie(
+                start_measure=1,
+                start_beat=1,
+                end_measure=1,
+                end_beat=1,
+            )
+
+        assert str(exc_info.value) == (
+            "Invalid remove_tie endpoints: start and end both point to "
+            "measure 1, beat 1.0, voice 1. A single-anchor remove_tie call "
+            "removes the full connected tie chain containing the start note. "
+            "If you provide end_measure/end_beat, they must identify the "
+            "distinct note or chord this note is tied to."
+        )
+        notes = ss.get_notes(measure=1)
+        sounding = [note for note in notes if not note.is_rest]
+        assert sounding[0].is_tied
+        assert sounding[1].is_tied
+
+    def test_remove_tie_rejects_end_endpoint_without_tie(self):
+        ss = _make_score()
+        ss._add_note_one("C4", "quarter", measure=1, beat=1)
+        ss._add_note_one("C4", "quarter", measure=1, beat=2)
+        ss._add_note_one("C4", "quarter", measure=1, beat=3)
+        ss.add_tie(measure=1, beat=1)
+
+        with pytest.raises(ValueError) as exc_info:
+            ss.remove_tie(
+                start_measure=1,
+                start_beat=1,
+                end_measure=1,
+                end_beat=3,
+            )
+
+        assert str(exc_info.value) == (
+            "Invalid remove_tie endpoint: measure 1, beat 3.0, voice 1 is "
+            "not a tied note or chord. If you provide end_measure/end_beat, "
+            "they must identify the distinct note or chord that the start "
+            "note is tied to."
+        )
+        notes = ss.get_notes(measure=1)
+        sounding = [note for note in notes if not note.is_rest]
+        assert sounding[0].is_tied
+        assert sounding[1].is_tied
+        assert not sounding[2].is_tied
+
+    def test_remove_tie_rejects_endpoint_in_separate_tie_chain(self):
+        ss = _make_score()
+        ss._add_note_one("C4", "quarter", measure=1, beat=1)
+        ss._add_note_one("C4", "quarter", measure=1, beat=2)
+        ss._add_note_one("C4", "quarter", measure=1, beat=3)
+        ss._add_note_one("C4", "quarter", measure=1, beat=4)
+        ss.add_tie(measure=1, beat=1)
+        ss.add_tie(measure=1, beat=3)
+
+        with pytest.raises(ValueError) as exc_info:
+            ss.remove_tie(
+                start_measure=1,
+                start_beat=1,
+                end_measure=1,
+                end_beat=3,
+            )
+
+        assert str(exc_info.value) == (
+            "Invalid remove_tie endpoints: measure 1, beat 3.0, voice 1 is "
+            "not in the same tie chain as measure 1, beat 1.0. If you "
+            "provide end_measure/end_beat, choose a distinct note or chord "
+            "in the same tie chain as the start note."
+        )
+        notes = ss.get_notes(measure=1)
+        sounding = [note for note in notes if not note.is_rest]
+        assert sounding[0].is_tied
+        assert sounding[1].is_tied
+        assert sounding[2].is_tied
+        assert sounding[3].is_tied
+
+    def test_remove_tie_accepts_distinct_endpoints_in_same_tie_chain(self):
+        ss = _make_score()
+        ss._add_note_one("C4", "quarter", measure=1, beat=1)
+        ss._add_note_one("C4", "quarter", measure=1, beat=2)
+        ss._add_note_one("C4", "quarter", measure=1, beat=3)
+        ss.add_tie(measure=1, beat=1)
+        ss.add_tie(measure=1, beat=2)
+
+        result = ss.remove_tie(
+            start_measure=1,
+            start_beat=1,
+            end_measure=1,
+            end_beat=3,
+        )
+
+        assert result.success
+        assert [item["tie_type"] for item in result.details["removed"]] == [
+            "start",
+            "continue",
+            "stop",
+        ]
+        notes = ss.get_notes(measure=1)
+        sounding = [note for note in notes if not note.is_rest]
+        assert not sounding[0].is_tied
+        assert not sounding[1].is_tied
+        assert not sounding[2].is_tied
+
     def test_remove_tie_missing_fails(self):
         ss = _make_score()
         ss._add_note_one("C4", "quarter", measure=1, beat=1)
