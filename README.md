@@ -109,3 +109,9 @@ print(result.target_fact_count_supported)
 
 The extractor is independent of the deleted benchmark generation and evaluation
 pipeline code.
+
+## Project Information
+
+ScoreSpeak was developed as part of my Master's Thesis at California Polytechnic State University, San Luis Obispo. 
+The full paper is currently still under review but will be linked here once it has been published into the Cal Poly Digital 
+Commons. For any questions about this work, please feel free to contact me at nathanlim@gmail.com
