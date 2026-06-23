@@ -1,5 +1,5 @@
 Setup:
-Create exactly 2 parts in this order and do not create any additional parts later: part 0 with displayed name Piano RH and instrument Piano; part 1 with displayed name Piano LH and instrument Piano. Set the initial score attributes in measure 1 to key signature C major and time signature 4/4. In measure 1, set Piano RH to treble clef and Piano LH to treble clef.
+Create exactly 1 part and do not create any additional parts later: Piano in grand staff. Set the initial score attributes in measure 1 to key signature C major and time signature 4/4. In measure 1, set Piano RH to treble clef and Piano LH to treble clef.
 
 Measure 1:
 Make sure every part includes measure 1 before filling it. In Piano RH, enter a half note C5 at beat 1, a quarter note E5 at beat 3, and a quarter note G5 at beat 4. Add the text expression "Allegro" at beat 1. In Piano LH, enter an eighth note C4 at beat 1, an eighth note G4 at beat 1.5, an eighth note E4 at beat 2, an eighth note G4 at beat 2.5, an eighth note C4 at beat 3, an eighth note G4 at beat 3.5, an eighth note E4 at beat 4, and an eighth note G4 at beat 4.5.
