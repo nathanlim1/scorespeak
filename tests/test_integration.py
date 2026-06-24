@@ -10,7 +10,7 @@ import tempfile
 
 import pytest
 
-from scorespeak import ScoreSpeak, OperationResult
+from scorespeak import ScoreSpeak
 
 
 TEST_FILE = os.path.join(

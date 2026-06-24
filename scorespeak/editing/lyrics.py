@@ -2,7 +2,20 @@
 
 from __future__ import annotations
 
-from .marking_common import *
+from .marking_common import (
+    LyricInfo,
+    OperationResult,
+    Optional,
+    Union,
+    _VALID_SYLLABICS,
+    _find_note_at_offset,
+    _iter_voice_streams,
+    _pitch_label,
+    _validate_beat_in_measure,
+    m21note,
+    m21stream,
+    validate_voice_number,
+)
 
 
 class LyricEditingMixin:

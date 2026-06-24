@@ -2,7 +2,20 @@
 
 from __future__ import annotations
 
-from .expression_common import *
+from .expression_common import (
+    OperationResult,
+    Optional,
+    Union,
+    _find_text_expression_at_offset,
+    _normalize_tempo_referent,
+    _normalize_text_expression_value,
+    _tempo_referent_label,
+    _validate_beat_in_measure,
+    m21expressions,
+    m21harmony,
+    m21stream,
+    m21tempo,
+)
 
 
 class TextExpressionEditingMixin:

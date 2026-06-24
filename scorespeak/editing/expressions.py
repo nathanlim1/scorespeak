@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from .articulations import ArticulationEditingMixin
 from .dynamics import DynamicsEditingMixin
-from .expression_common import *
-from .expression_shared import ExpressionSharedMixin
 from .text_expressions import TextExpressionEditingMixin
 
 
@@ -13,7 +11,6 @@ class ExpressionsMixin(
     DynamicsEditingMixin,
     ArticulationEditingMixin,
     TextExpressionEditingMixin,
-    ExpressionSharedMixin,
 ):
     """Mixin providing expressive marking operations."""
 

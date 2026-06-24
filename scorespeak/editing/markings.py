@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from .endings import EndingBracketEditingMixin
 from .lyrics import LyricEditingMixin
-from .marking_common import *
-from .marking_shared import MarkingSharedMixin
 from .ornaments import OrnamentEditingMixin
 from .spanner_markings import SpannerMarkingEditingMixin
 from .techniques import TechniqueEditingMixin
@@ -17,7 +15,6 @@ class MarkingsMixin(
     SpannerMarkingEditingMixin,
     EndingBracketEditingMixin,
     TechniqueEditingMixin,
-    MarkingSharedMixin,
 ):
     """Mixin providing extended notational marking operations."""
 

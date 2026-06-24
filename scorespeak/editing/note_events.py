@@ -10,18 +10,11 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any, Optional, Union
 
-from music21 import beam as m21beam
 from music21 import chord as m21chord
-from music21 import clef as m21clef
-from music21 import duration as m21duration
 from music21 import instrument as m21instrument
-from music21 import key as m21key
-from music21 import meter as m21meter
 from music21 import note as m21note
 from music21 import pitch as m21pitch
-from music21 import spanner as m21spanner
 from music21 import stream as m21stream
-from music21 import tie as m21tie
 
 from ..types import (
     DurationInput,

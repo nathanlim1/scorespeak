@@ -338,11 +338,6 @@ def benchmark_action_schema_hash() -> str:
     return hashlib.sha1(encoded.encode("utf-8")).hexdigest()[:12]
 
 
-def action_to_dict(action: BenchmarkEditAction) -> dict[str, Any]:
-    """Return a stable JSON-safe action dict."""
-    return asdict(action)
-
-
 def _benchmark_voice(args: dict[str, Any]) -> int:
     """Return the validated benchmark voice argument."""
     raw_voice = args.get("voice")

@@ -2,7 +2,16 @@
 
 from __future__ import annotations
 
-from .signature_common import *
+from .signature_common import (
+    OperationResult,
+    Optional,
+    _CODA_MARK_TYPE,
+    _NAVIGATION_MARK_CLASSES,
+    _TO_CODA_MARK_TYPE,
+    _TO_CODA_TEXT,
+    _is_to_coda_mark,
+    m21repeat,
+)
 
 
 class NavigationMarkEditingMixin:

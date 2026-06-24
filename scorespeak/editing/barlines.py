@@ -2,7 +2,17 @@
 
 from __future__ import annotations
 
-from .signature_common import *
+from .signature_common import (
+    OperationResult,
+    Optional,
+    Union,
+    _VALID_BARLINE_TYPES,
+    _clear_measure_note_content,
+    m21bar,
+    m21clef,
+    m21note,
+    make_clef,
+)
 
 
 class BarlineEditingMixin:
@@ -28,7 +38,7 @@ class BarlineEditingMixin:
             ValueError: If the clef type is unrecognized or the measure
                 does not exist.
         """
-        new_clef = make_clef(clef_type)
+        make_clef(clef_type)
         targets = self._resolve_parts_or_all(part)
         changed_parts = []
 

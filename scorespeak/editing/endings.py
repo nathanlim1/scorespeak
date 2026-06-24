@@ -2,7 +2,14 @@
 
 from __future__ import annotations
 
-from .marking_common import *
+from .marking_common import (
+    OperationResult,
+    Union,
+    _normalize_ending_number,
+    _repeat_bracket_starts_at,
+    m21spanner,
+    m21stream,
+)
 
 
 class EndingBracketEditingMixin:

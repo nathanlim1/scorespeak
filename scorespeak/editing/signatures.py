@@ -5,8 +5,6 @@ from __future__ import annotations
 from .barlines import BarlineEditingMixin
 from .key_signatures import KeySignatureEditingMixin
 from .navigation import NavigationMarkEditingMixin
-from .signature_common import *
-from .signature_shared import SignatureSharedMixin
 from .time_signatures import TimeSignatureEditingMixin
 
 
@@ -15,7 +13,6 @@ class SignaturesMixin(
     KeySignatureEditingMixin,
     BarlineEditingMixin,
     NavigationMarkEditingMixin,
-    SignatureSharedMixin,
 ):
     """Mixin providing signature, clef, barline, repeat, and navigation operations."""
 

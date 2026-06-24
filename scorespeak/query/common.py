@@ -22,13 +22,11 @@ from music21 import expressions as m21expressions
 from music21 import harmony as m21harmony
 from music21 import key as m21key
 from music21 import layout as m21layout
-from music21 import meter as m21meter
 from music21 import note as m21note
 from music21 import pitch as m21pitch
 from music21 import repeat as m21repeat
 from music21 import spanner as m21spanner
 from music21 import stream as m21stream
-from music21 import tempo as m21tempo
 
 from ..music.pitch_space import (
     part_stores_sounding_pitch,
@@ -250,4 +248,66 @@ class BarPayloadOptions:
     include_spans: bool = True
 
 
-__all__ = [name for name in globals() if not name.startswith('__')]
+__all__ = [
+    "ActiveSignatures",
+    "Any",
+    "BAR_NOTATION_KEYS",
+    "BarEventRow",
+    "BarGroup",
+    "BarNotation",
+    "BarPart",
+    "BarPayloadOptions",
+    "BarQuery",
+    "BarQueryEvent",
+    "BarQueryInput",
+    "BarResultSet",
+    "BarVoice",
+    "DurationInput",
+    "EVENT_SCHEMA",
+    "MARKING_SCHEMA",
+    "MATCH_SCHEMA",
+    "MarkingRow",
+    "Optional",
+    "PART_NOTATION_KEYS",
+    "PartLabel",
+    "PartNotation",
+    "ParsedBarQuery",
+    "ParsedQueryEvent",
+    "PitchInput",
+    "SPAN_SCHEMA",
+    "SUPPORTED_CHORD_MODES",
+    "SUPPORTED_EVENT_KINDS",
+    "SpanRow",
+    "TUPLET_SCHEMA",
+    "TupletInfo",
+    "TupletSpanRow",
+    "Union",
+    "VoiceEvent",
+    "_FERMATA_CLASSES",
+    "_FINGERING_CLASSES",
+    "_NAVIGATION_MARK_LABELS",
+    "_ORNAMENT_CLASSES",
+    "_SPAN_TYPES",
+    "_coda_navigation_label",
+    "build_part_display_labels",
+    "m21bar",
+    "m21chord",
+    "m21clef",
+    "m21dynamics",
+    "m21expressions",
+    "m21harmony",
+    "m21key",
+    "m21layout",
+    "m21note",
+    "m21pitch",
+    "m21repeat",
+    "m21spanner",
+    "m21stream",
+    "normalize_duration",
+    "normalize_pitch",
+    "part_stores_sounding_pitch",
+    "part_transposition_interval",
+    "stored_key_signature_for_concert_key",
+    "stored_pitch_space_label",
+    "validate_voice_number",
+]

@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import Enum
+from music21 import pitch as m21pitch
 from typing import Any, NotRequired, Optional, TypeAlias, TypedDict, Union
 
 
@@ -225,7 +226,7 @@ class LyricInfo:
     pitch_or_chord: str
 
 
-PitchInput = Union[str, int, "music21.pitch.Pitch"]  # type: ignore[name-defined]
+PitchInput = Union[str, int, m21pitch.Pitch]
 DurationInput = Union[str, float]
 
 BarEventRow: TypeAlias = list[Any]

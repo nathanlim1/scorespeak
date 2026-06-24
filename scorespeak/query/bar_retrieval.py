@@ -2,14 +2,12 @@
 
 from __future__ import annotations
 
-from .common import *
 from .marking_payloads import BarMarkingPayloadMixin
 from .matching import BarSearchMatchingMixin
 from .notation import BarNotationMixin
 from .parsing import BarQueryParsingMixin
 from .payloads import BarPayloadAssemblyMixin
 from .result import BarRetrievalResultMixin
-from .shared import BarRetrievalSharedMixin
 
 
 class BarRetrievalMixin(
@@ -19,7 +17,6 @@ class BarRetrievalMixin(
     BarPayloadAssemblyMixin,
     BarMarkingPayloadMixin,
     BarNotationMixin,
-    BarRetrievalSharedMixin,
 ):
     """Mixin providing compact bar-first retrieval over score contents."""
 

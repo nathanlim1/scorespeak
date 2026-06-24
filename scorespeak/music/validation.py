@@ -8,14 +8,12 @@ range checking, and accidental inference from key signatures.
 from __future__ import annotations
 
 import re
-from fractions import Fraction
 from typing import Optional
 
 from music21 import clef as m21clef
 from music21 import instrument as m21instrument
 from music21 import key as m21key
 from music21 import meter as m21meter
-from music21 import note as m21note
 from music21 import pitch as m21pitch
 from music21 import duration as m21duration
 

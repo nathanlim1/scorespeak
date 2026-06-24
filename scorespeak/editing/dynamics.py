@@ -2,7 +2,25 @@
 
 from __future__ import annotations
 
-from .expression_common import *
+from .expression_common import (
+    DynamicLevel,
+    HairpinType,
+    OperationResult,
+    Optional,
+    Union,
+    VALID_DYNAMICS,
+    _find_dynamic_at_offset,
+    _find_general_note_at_offset,
+    _find_hairpin_starting_at,
+    _find_note_at_offset,
+    _find_note_ending_at_offset,
+    _hairpin_matches_request,
+    _hairpin_type,
+    _validate_beat_in_measure,
+    m21dynamics,
+    m21spanner,
+    m21stream,
+)
 
 
 class DynamicsEditingMixin:

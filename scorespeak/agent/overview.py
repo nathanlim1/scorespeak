@@ -9,7 +9,7 @@ of the full shape of the score.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from typing import Optional
 
 from music21 import stream as m21stream
@@ -457,8 +457,3 @@ def format_overview_for_prompt(overview: ScoreOverview) -> str:
         lines.append("Changes: " + " ".join(change_fragments))
 
     return "\n".join(lines)
-
-
-def overview_as_dict(overview: ScoreOverview) -> dict:
-    """Return the overview as a plain dict (useful for tests and logging)."""
-    return asdict(overview)

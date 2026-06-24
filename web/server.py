@@ -143,12 +143,6 @@ def _uploaded_audio_suffix(
     return ".webm"
 
 
-def _load_score_from_upload(file: FileStorage) -> ScoreSpeak:
-    """Load a ScoreSpeak from an uploaded MusicXML or compressed MXL file."""
-    score_state, _ = _load_score_and_display_xml_from_upload(file)
-    return score_state
-
-
 def _decode_xml_bytes(xml_bytes: bytes) -> str:
     """Decode MusicXML bytes for browser rendering."""
     return xml_bytes.decode("utf-8-sig")

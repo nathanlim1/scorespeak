@@ -10,7 +10,6 @@ from scorespeak.retrieval import (
     LexicalContextRetriever,
     LexicalRetriever,
     MethodIndex,
-    MethodRecord,
     ResultFormatter,
     extract_lexical_context_scope,
 )

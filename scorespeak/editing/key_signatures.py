@@ -2,7 +2,21 @@
 
 from __future__ import annotations
 
-from .signature_common import *
+from .signature_common import (
+    OperationResult,
+    Optional,
+    Union,
+    _parse_key_signature,
+    concert_key_signature_for_stored_key,
+    copy_key_signature,
+    has_marked_local_key_override,
+    is_open_key_signature,
+    m21key,
+    m21note,
+    m21stream,
+    mark_local_key_override,
+    stored_key_signature_for_concert_key,
+)
 
 
 class KeySignatureEditingMixin:

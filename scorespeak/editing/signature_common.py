@@ -7,7 +7,6 @@ barlines, repeats, and pickup (anacrusis) measures.
 
 from __future__ import annotations
 
-import re
 from typing import Optional, Union
 
 from music21 import bar as m21bar
@@ -109,33 +108,6 @@ def _parse_key_signature(key_str: str) -> m21key.KeySignature:
     )
 
 
-def _direct_sounding_duration(stream_obj: m21stream.Stream) -> float:
-    """Return the occupied duration of direct sounding events in a stream."""
-    duration = 0.0
-    for element in stream_obj:
-        if not isinstance(element, (m21note.Note, m21chord.Chord)):
-            continue
-        if getattr(element.duration, "isGrace", False):
-            continue
-        offset = float(stream_obj.elementOffset(element))
-        duration = max(duration, offset + float(element.quarterLength))
-    return duration
-
-
-def _total_sounding_duration(measure: m21stream.Measure) -> float:
-    """Return the maximum occupied duration across measure voices.
-
-    Explicit voices are independent rhythmic timelines, so simultaneous voices
-    should not be summed when checking whether a meter can contain them.
-    Rests and grace notes do not consume capacity.
-    """
-    durations = [_direct_sounding_duration(voice) for voice in measure.voices]
-    direct_duration = _direct_sounding_duration(measure)
-    if direct_duration > 0:
-        durations.append(direct_duration)
-    return max(durations, default=0.0)
-
-
 def _measure_has_sounding_content(measure: m21stream.Measure) -> bool:
     """Return whether a measure contains duration-bearing notes or chords."""
     for element in measure.recurse().getElementsByClass(m21note.GeneralNote):
@@ -208,4 +180,33 @@ def _clear_measure_note_content(measure: m21stream.Measure) -> None:
 # ---------------------------------------------------------------------------
 
 
-__all__ = [name for name in globals() if not name.startswith('__')]
+__all__ = [
+    "OperationResult",
+    "Optional",
+    "Union",
+    "_CODA_MARK_TYPE",
+    "_NAVIGATION_MARK_CLASSES",
+    "_TO_CODA_MARK_TYPE",
+    "_TO_CODA_TEXT",
+    "_VALID_BARLINE_TYPES",
+    "_clear_measure_note_content",
+    "_collapse_rest_only_measure",
+    "_hidden_rests_cover_measure",
+    "_is_to_coda_mark",
+    "_parse_key_signature",
+    "concert_key_signature_for_stored_key",
+    "copy_key_signature",
+    "has_marked_local_key_override",
+    "is_open_key_signature",
+    "m21bar",
+    "m21chord",
+    "m21clef",
+    "m21key",
+    "m21meter",
+    "m21note",
+    "m21repeat",
+    "m21stream",
+    "make_clef",
+    "mark_local_key_override",
+    "stored_key_signature_for_concert_key",
+]

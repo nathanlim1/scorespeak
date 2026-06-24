@@ -2,7 +2,23 @@
 
 from __future__ import annotations
 
-from .expression_common import *
+from .expression_common import (
+    ArticulationType,
+    OperationResult,
+    Optional,
+    Union,
+    _ARTICULATION_MAP,
+    _add_articulation_marking,
+    _articulation_allows_rest,
+    _articulation_target_label,
+    _find_general_note_at_offset,
+    _find_note_at_offset,
+    _has_articulation_marking,
+    _remove_articulation_marking,
+    m21note,
+    m21spanner,
+    m21stream,
+)
 
 
 class ArticulationEditingMixin:

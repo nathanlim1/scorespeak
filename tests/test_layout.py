@@ -6,7 +6,6 @@ import tempfile
 import pytest
 from music21 import chord as m21chord
 from music21 import instrument as m21instrument
-from music21 import interval as m21interval
 from music21 import layout as m21layout
 from music21 import note as m21note
 from music21 import stream as m21stream

@@ -358,4 +358,37 @@ def _find_note_ending_at_offset(
             best_start = el_offset
     return best
 
-__all__ = [name for name in globals() if not name.startswith('__')]
+__all__ = [
+    "ArticulationType",
+    "DynamicLevel",
+    "HairpinType",
+    "OperationResult",
+    "Optional",
+    "Union",
+    "VALID_DYNAMICS",
+    "_ARTICULATION_MAP",
+    "_add_articulation_marking",
+    "_articulation_allows_rest",
+    "_articulation_target_label",
+    "_find_dynamic_at_offset",
+    "_find_general_note_at_offset",
+    "_find_hairpin_starting_at",
+    "_find_note_at_offset",
+    "_find_note_ending_at_offset",
+    "_find_text_expression_at_offset",
+    "_hairpin_matches_request",
+    "_hairpin_type",
+    "_has_articulation_marking",
+    "_normalize_tempo_referent",
+    "_normalize_text_expression_value",
+    "_remove_articulation_marking",
+    "_tempo_referent_label",
+    "_validate_beat_in_measure",
+    "m21dynamics",
+    "m21expressions",
+    "m21harmony",
+    "m21note",
+    "m21spanner",
+    "m21stream",
+    "m21tempo",
+]

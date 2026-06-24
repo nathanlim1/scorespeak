@@ -2,7 +2,16 @@
 
 from __future__ import annotations
 
-from .signature_common import *
+from .signature_common import (
+    OperationResult,
+    Optional,
+    _collapse_rest_only_measure,
+    _hidden_rests_cover_measure,
+    m21chord,
+    m21meter,
+    m21note,
+    m21stream,
+)
 
 
 class TimeSignatureEditingMixin:

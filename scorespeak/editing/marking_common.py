@@ -255,4 +255,29 @@ def _find_spanner_by_first_anchor(
             return sp
     return None
 
-__all__ = [name for name in globals() if not name.startswith('__')]
+__all__ = [
+    "LyricInfo",
+    "OperationResult",
+    "Optional",
+    "Union",
+    "_ORNAMENT_MAP",
+    "_VALID_SYLLABICS",
+    "_find_note_at_offset",
+    "_find_spanner_by_first_anchor",
+    "_iter_voice_streams",
+    "_normalize_ending_number",
+    "_normalize_ottava_type",
+    "_ottava_rewrite_interval",
+    "_pitch_label",
+    "_repeat_bracket_starts_at",
+    "_spanned_measure_numbers",
+    "_transpose_spanned_pitch_elements",
+    "_validate_beat_in_measure",
+    "m21articulations",
+    "m21chord",
+    "m21expressions",
+    "m21note",
+    "m21spanner",
+    "m21stream",
+    "validate_voice_number",
+]
