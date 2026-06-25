@@ -6,6 +6,12 @@ ScoreSpeak is a comprehensive LLM-based agentic system that enables full natural
 
 ![ScoreSpeak web demo](assets/scorespeak-demo.gif)
 
+## Project Information
+
+ScoreSpeak was developed as part of my master's thesis at California Polytechnic State University, San Luis Obispo.
+This repository contains the main contributions of the paper, including the agent code, benchmark datasets created for evaluation, and web-based sheet music editor.
+The full paper can be downloaded from [this publication page](https://digitalcommons.calpoly.edu/theses/3338/) in Cal Poly Digital Commons.
+
 This public repository contains:
 
 - `scorespeak/`: the score editing framework, retrieval helpers, agent tools,
@@ -110,8 +116,6 @@ print(result.target_fact_count_supported)
 The extractor is independent of the deleted benchmark generation and evaluation
 pipeline code.
 
-## Project Information
+## Questions
 
-ScoreSpeak was developed as part of my Master's Thesis at California Polytechnic State University, San Luis Obispo. 
-The full paper is currently still under review but will be linked here once it has been published into the Cal Poly Digital 
-Commons. For any questions about this work, please feel free to contact me at nathanlim@gmail.com
+For any questions about this work, please feel free to contact me at [nathanlim@gmail.com](mailto:nathanlim@gmail.com)
